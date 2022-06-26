@@ -1,11 +1,13 @@
 Summary:        Calculatot dictionary
 Name:           calculator
 Version:        0.1
-Release:        alt2
+Release:        alt3
 License:        GPL
 Group:          Others
 Source0:        %{name}-%{version}.tar
 Packager:       SoVa
+
+BuildRequires: gcc-c++-common
 
 %description
 This package contains a simple cailculator program in C++
@@ -26,6 +28,9 @@ cp Calctest %buildroot%_bindir/
 %_bindir/Calctest
 
 %changelog
+* Sun Jun 26 2022 SoVa <sokolovvaly.158@gmail.com> - 0.1-alt3
+- Added BuildRequires
+
 * Sun Jun 26 2022 SoVa <sokolovvaly.158@gmail.com> - 0.1-alt2
 - new rel
 
