@@ -1,33 +1,44 @@
-Summary:        Calculatot dictionary
-Name:           calculator
+
+Name:           Calculator
 Version:        0.1
-Release:        alt3
+Release:        alt4
+
+Summary:        Calculatot dictionary
 License:        GPL
 Group:          Others
-Source0:        %{name}-%{version}.tar
+
 Packager:       SoVa
 
-BuildRequires: gcc-c++-common
+BuildRequires:  gcc-c++-common
+
+Source0:        %name-%version.tar
 
 %description
-This package contains a simple cailculator program in C++
+This package contains a simple Calculator program in C++
 
 %prep
+
 %setup -q
 
 %build
-ls -la
-g++ -o Calctest calc.cpp
+
+%cmake
+%cmake_build
 
 %install
+cd %_build_alias
 mkdir -p %buildroot%_bindir/
-chmod 755 Calctest
-cp Calctest %buildroot%_bindir/
+chmod 755 %name
+cp %name %buildroot%_bindir/
+
 
 %files
-%_bindir/Calctest
+%_bindir/%name
 
 %changelog
+* Thu Jul 7 2022 SoVa <sokolovvaly.158@gmail.com> - 0.1-alt4
+- Added CMakeList.txt
+
 * Sun Jun 26 2022 SoVa <sokolovvaly.158@gmail.com> - 0.1-alt3
 - Added BuildRequires
 
