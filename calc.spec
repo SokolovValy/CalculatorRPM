@@ -1,7 +1,7 @@
 
 Name:           Calculator
 Version:        0.1
-Release:        alt4
+Release:        alt5
 
 Summary:        Calculatot dictionary
 License:        GPL
@@ -26,16 +26,16 @@ This package contains a simple Calculator program in C++
 %cmake_build
 
 %install
-cd %_build_alias
-mkdir -p %buildroot%_bindir/
-chmod 755 %name
-cp %name %buildroot%_bindir/
+%cmake_install
 
 
 %files
 %_bindir/%name
 
 %changelog
+* Mon Jul 11 2022 SoVa <sokolovaly.158@gmail.com> - 0.1-alt5
+- Added %cmake_install in the install section
+
 * Thu Jul 7 2022 SoVa <sokolovvaly.158@gmail.com> - 0.1-alt4
 - Added CMakeList.txt
 
